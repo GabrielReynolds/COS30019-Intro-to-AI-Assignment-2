@@ -1,22 +1,25 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 
 namespace AI_Assignment_2
 {
 	public class KnowledgeBase
 	{
+		List<string> _kBList;
+		string _query;
 		public KnowledgeBase(string filepath)
 		{
-			readFile(filepath);
+			_kBList = readFile(filepath);
 		}
-
-		private void readFile(filepath)
+		// maybe getters n setterz
+		private List<string> readFile(string filepath)
 		{
 			StreamReader sR = new StreamReader(filepath);
 			string line;
-			string[] kBA;
-			string q;
+			List<string> kBL = new List<string>();
+			string q = "cuck"; // change later
 
 			while (!sR.EndOfStream)
 			{
@@ -24,22 +27,32 @@ namespace AI_Assignment_2
 
 				if (line == "TELL")
 				{
+					string[] kBA;
 					string kB = sR.ReadLine();
+					kB = kB.Replace(" ", String.Empty);
 					kBA = kB.Split(';');
+					foreach(string k in kBA)
+                    {
+						kBL.Add(k);
+                    }
+					
+
 				}
 
 				if (line == "ASK")
 				{
-					q = sR.ReadLine();
+					_query = sR.ReadLine(); // TODO: MAYBE FIX NICER?????
 				}
 			}
 
-			foreach (string k in kBA)
+			foreach (string k in kBL)
 			{
+				
 				Console.WriteLine(k);
 			}
 
 			Console.WriteLine(q);
+			return kBL;
 		}
 	}
 }
