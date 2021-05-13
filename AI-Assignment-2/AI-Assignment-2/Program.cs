@@ -10,7 +10,11 @@ namespace AI_Assignment_2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string filepath = "C:/Users/gaber/source/repos/COS30019-Intro-to-AI-Assignment-2/AI-Assignment-2/test_HornKB.txt";
+
+            KnowledgeBase kB = new KnowledgeBase(filepath);
+
+
         }
     }
 }
