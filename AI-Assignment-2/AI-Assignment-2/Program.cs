@@ -10,7 +10,11 @@ namespace AI_Assignment_2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string filepath = "C:/Users/Sam/Downloads/test_HornKB.txt";
+
+            KnowledgeBase kB = new KnowledgeBase(filepath);
+
+           Console.ReadLine();
         }
     }
 }
