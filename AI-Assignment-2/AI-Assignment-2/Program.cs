@@ -10,7 +10,7 @@ namespace AI_Assignment_2
     {
         static void Main(string[] args)
         {
-            string filepath = "C:/Users/Sam/Downloads/test_HornKB.txt";
+            string filepath = "test_HornKB.txt";
 
             KnowledgeBase kB = new KnowledgeBase(filepath);
 
