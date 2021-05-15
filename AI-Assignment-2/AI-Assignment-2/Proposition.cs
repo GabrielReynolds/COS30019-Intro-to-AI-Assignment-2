@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 
 namespace AI_Assignment_2
+
 {
 	public class Proposition	// very confused about name tbh
 	{

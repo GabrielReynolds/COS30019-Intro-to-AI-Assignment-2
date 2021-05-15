@@ -3,7 +3,6 @@ using System.IO;
 using System.Text.RegularExpressions; 
 using System.Collections.Generic;
 
-
 namespace AI_Assignment_2
 {
 	public class KnowledgeBase
@@ -13,7 +12,7 @@ namespace AI_Assignment_2
         // to simulate a map of nodes (like in the lectures).
 		// Hence the new class: kinda like problem set 3 for data
 
-		List<Proposition> _kBList;
+		List<Proposition> _kBList;	// WHY WON'T YOU RECOGNISE
 		string _query;
 
 		public KnowledgeBase(string filepath)
