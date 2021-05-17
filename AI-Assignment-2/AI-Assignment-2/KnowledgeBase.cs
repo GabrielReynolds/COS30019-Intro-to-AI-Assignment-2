@@ -19,7 +19,7 @@ namespace AI_Assignment_2
 		{
 			_kBList = null;
 				readFile(filepath);
-
+			
 		}
 
 		// maybe getters n setterz

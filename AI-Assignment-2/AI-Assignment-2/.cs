@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AI_Assignment_2
 {
-    class tstecalss
+    public class tstecalss
     {
     }
 }

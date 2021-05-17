@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.IO;
 
 namespace AI_Assignment_2
-
 {
 	public class Proposition	// very confused about name tbh
 	{

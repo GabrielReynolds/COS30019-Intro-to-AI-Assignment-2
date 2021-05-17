@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\AI-Assignment-2",
-    "\\AI-Assignment-2\\AI-Assignment-2"
+    "\\AI-Assignment-2\\AI-Assignment-2",
+    "\\AI-Assignment-2\\AI-Assignment-2\\bin",
+    "\\AI-Assignment-2\\AI-Assignment-2\\obj",
+    "\\AI-Assignment-2\\AI-Assignment-2\\Properties"
   ],
-  "SelectedNode": "\\AI-Assignment-2\\AI-Assignment-2\\Proposition.cs",
+  "SelectedNode": "\\AI-Assignment-2\\AI-Assignment-2\\.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Proposition",
+      "appliesTo": "AI-Assignment-2/AI-Assignment-2/Proposition.cs",
+      "type": "launch"
+    }
+  ]
+}
