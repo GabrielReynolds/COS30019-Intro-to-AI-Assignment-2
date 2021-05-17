@@ -28,7 +28,7 @@ namespace AI_Assignment_2
 			StreamReader sR = new StreamReader(filepath);
 			string line;
 			List<Proposition> kBL = new List<Proposition>();
-
+			string[] kBB;
 			while (!sR.EndOfStream)
 			{
 				line = sR.ReadLine();
@@ -36,7 +36,7 @@ namespace AI_Assignment_2
 				if (line == "TELL")
 				{
 					string[] kBA;
-					string[] kBB;
+					
 					string kB = sR.ReadLine();
 
 					kB = kB.Replace(" ", String.Empty);
@@ -53,7 +53,7 @@ namespace AI_Assignment_2
 					_query = sR.ReadLine(); // TODO: MAYBE FIX NICER?????			
 			}
 
-			foreach (string k in kBB)				
+			foreach (string k in kBA)				
 				Console.WriteLine(k);	
 
 		}
