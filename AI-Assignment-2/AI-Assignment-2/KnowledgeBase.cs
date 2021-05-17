@@ -44,8 +44,9 @@ namespace AI_Assignment_2
 
 					foreach(string k in kBA)
                     { 
-						string[] temp = Regex.Split(k, @"(?<=[=])");
-
+						string[] temp = Regex.Split(k, @"(?>=[=>])");
+						Proposition p = new Proposition(temp[0], temp[1], temp[2]);
+						kBL.Add(p);
                     }
 				}
 
@@ -53,8 +54,8 @@ namespace AI_Assignment_2
 					_query = sR.ReadLine(); // TODO: MAYBE FIX NICER?????			
 			}
 
-			foreach (string k in kBA)				
-				Console.WriteLine(k);	
+	//		foreach (string k in kBA)				
+	//			Console.WriteLine(k);	
 
 		}
 	}
