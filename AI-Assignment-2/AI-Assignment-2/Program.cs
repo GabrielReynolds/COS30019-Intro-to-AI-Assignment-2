@@ -12,7 +12,7 @@ namespace AI_Assignment_2
         {
             string filepath = "test_HornKB.txt";
             
-          
+       
 
             KnowledgeBase kB = new KnowledgeBase(filepath);
 
