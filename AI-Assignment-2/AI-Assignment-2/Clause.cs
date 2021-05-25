@@ -21,9 +21,33 @@ namespace AI_Assignment_2
 			_value = value;
 
 		}
+
 		public string Value { get { return _value; } }
 		public string Operator { get { return _operator; } }
 		public List<string> Proposition { get { return _propositions; } }
+
+		// Property to read entire clause:
+
+		public string Sentence 
+		{
+            get 
+			{
+				if(_propositions == null)
+					return _value;
+
+				else
+                { 
+					string result = "";
+
+					for(int i = 0; i < _propositions.Count; i++)			
+						result += _propositions[i] + " ";					
+
+					result += _operator + " " + _value;
+
+					return result;
+				}
+			}
+		}
 
 
 	}
