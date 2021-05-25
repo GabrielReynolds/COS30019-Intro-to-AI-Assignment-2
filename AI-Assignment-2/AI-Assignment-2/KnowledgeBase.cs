@@ -12,21 +12,19 @@ namespace AI_Assignment_2
 		// to simulate a map of nodes (like in the lectures).
 		// Hence the new class: kinda like problem set 3 for data
 
-		List<Clause> _kBList;   // WHY WON'T YOU RECOGNISE // it recognises :)
-		string _query;
+		private List<Clause> _kB;   
+		private Clause _query;
 
 		public KnowledgeBase(string filepath)
 		{
-			_kBList = new List<Clause>();
+			_kB = new List<Clause>();
 			readFile(filepath);
 		}
 
-		// maybe getters n setterz
 		private void readFile(string filepath)
 		{
 			StreamReader sR = new StreamReader(filepath);
 			string line;
-			List<Clause> kBL = new List<Clause>();
 			string[] kBB;
 			Regex rgx = new Regex(@"(?>=[=>])");
 			Regex rgx2 = new Regex(@"([&])");
@@ -44,7 +42,6 @@ namespace AI_Assignment_2
 					kB = kB.Replace(" ", String.Empty);
 					kBA = kB.Split(';');
 
-
 					foreach (string k in kBA)
 					{
 						if (rgx.IsMatch(k))
@@ -52,15 +49,14 @@ namespace AI_Assignment_2
 							if (rgx2.IsMatch(k))    // Check for conjunction
 							{
 								List<string> tempList = new List<string>();
-								string[] temp = Regex.Split(k, @"(?>=[=>])"); // isolates value and proposition
-								string[] temp2 = Regex.Split(temp[0], @"(?>[&])");   // splits propostion by the & to add to list
+								string[] temp = Regex.Split(k, @"(?>=[=>])");		// isolates value and proposition
+								string[] temp2 = Regex.Split(temp[0], @"(?>[&])");  // splits propostion by the & to add to list
 
-								for (int i = 0; i < temp.Length - 1; i++)
+								for (int i = 0; i < temp.Length; i++)
 									tempList.Add(temp2[i]);
 
-
-								Clause p = new Clause(tempList, "=>", temp[temp.Length - 1]);
-								kBL.Add(p);
+								Clause p = new Clause(tempList, "=>", temp[temp.Length - 1]);	// Currently hardcoded: not flexible, but it functions for now
+								_kB.Add(p);
 							}
 
 							else // No Conjunction - 1 proposition
@@ -70,24 +66,67 @@ namespace AI_Assignment_2
 
 								tempList.Add(temp[0]);
 								Clause p = new Clause(tempList, "=>", temp[1]);
-								kBL.Add(p);
+								_kB.Add(p);
 							}
 						}
 						else    // Lone value
 						{
 							Clause p = new Clause(k);
-							kBL.Add(p);
+							_kB.Add(p);
 						}
 					}
 				}
 
 				if (line == "ASK")
-					_query = sR.ReadLine(); // TODO: MAYBE FIX NICER?????			
+                { 
+					string query = sR.ReadLine(); // TODO: MAYBE FIX NICER?????			
+					Clause q = new Clause(query);
+					_query = q;
+				}
 			}
 
-			foreach (Clause c in kBL)
-				Console.WriteLine(c.Operator);
+			foreach (Clause c in _kB)
+				Console.WriteLine(c.Sentence);
+		}
 
+		public void Remove(int i)
+        {
+			_kB.RemoveAt(i);
+		}
+
+		public Clause Indexer(int i)
+        {
+			return _kB[i];
+		}
+
+		public Clause First 
+		{
+			get
+            {
+				Clause result = _kB[0];
+				_kB.RemoveAt(0);
+				return result;
+			}
+		}
+
+		public Clause Query
+        {
+			get
+            {
+				return _query;
+			}
+			set
+            {
+				_query = value;
+			}
+		}
+
+		public int Size
+        {
+			get
+            {
+				return _kB.Count;
+			}
 		}
 	}
 }
