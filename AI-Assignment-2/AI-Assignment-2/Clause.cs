@@ -6,25 +6,29 @@ namespace AI_Assignment_2
 {
 	public class Clause	// very confused about name tbh
 	{
+		int _count;
 		string _value, _operator;
 		List<string> _propositions;
 
 		public Clause(List<string> propositions, string op, string value) // conditionals currently string for test
         {
 			_propositions = propositions;           // previous conditionals (in a list for convenience, as multiple may be present)
-			_value = value;							// current proposition
-			_operator = op;					// relevant horn clause
+			_value = value;							// current proposition 
+			_operator = op;                         // relevant horn clause
+			_count = propositions.Count;
 		}
 
 		public Clause(string value)
 		{
 			_value = value;
+			_propositions = new List<string>();
 
 		}
 
 		public string Value { get { return _value; } }
 		public string Operator { get { return _operator; } }
 		public List<string> Proposition { get { return _propositions; } }
+		public int Count { get { return _count; } set { _count = value;  } }
 
 		// Property to read entire clause:
 
