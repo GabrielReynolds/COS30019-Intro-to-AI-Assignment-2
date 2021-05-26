@@ -10,7 +10,25 @@ namespace AI_Assignment_2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string filepath = "test_HornKB.txt";
+            
+            
+
+            KnowledgeBase kB = new KnowledgeBase(filepath);
+            Clause query = kB.Query;
+            
+           
+            TruthTable test = new TruthTable(kB);
+            ForwardChain fctest = new ForwardChain(kB);
+            if(test.solve(query) == true)
+                Console.WriteLine("success");
+            else
+                Console.WriteLine("failure");
+            if (fctest.solve(query) == true)
+                Console.WriteLine("success");
+            else
+                Console.WriteLine("failure");
+            Console.ReadLine();
         }
     }
 }
