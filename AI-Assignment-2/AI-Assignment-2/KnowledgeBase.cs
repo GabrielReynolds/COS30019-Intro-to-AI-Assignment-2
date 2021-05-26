@@ -85,6 +85,7 @@ namespace AI_Assignment_2
 				}
 			}
 
+			_kB.RemoveAt(_kB.Count - 1);
 			foreach (Clause c in _kB)
 				Console.WriteLine(c.Sentence);
 		}
@@ -104,7 +105,6 @@ namespace AI_Assignment_2
 			get
             {
 				Clause result = _kB[0];
-				_kB.RemoveAt(0);
 				return result;
 			}
 		}

@@ -8,23 +8,19 @@ namespace AI_Assignment_2
 {
     public class TruthTable : SearchMethods
     {
+        public TruthTable() { }
 
-        public TruthTable(KnowledgeBase kb) : base(kb) { }
-
-        public override bool solve(Clause query)
+        public override bool solve(KnowledgeBase kb, Clause q)
         {
             Stack<Clause> symbols = new Stack<Clause>();    // stack for easy management
 
-            for(int i = 0; i < kb.Size; i++)
-            {     
+            for(int i = 0; i < kb.Size; i++)     
                 symbols.Push(kb.Indexer(i));
-            }
-
-            List<Clause> model = new List<Clause>(); 
-            return CheckAll(kb, query, symbols, model);
+            
+            return checkAll(kb, q, symbols, null);
         }
 
-        public bool CheckAll(KnowledgeBase kb, Clause q, Stack<Clause> symbols, List<Clause> model)
+        public bool checkAll(KnowledgeBase kb, Clause q, Stack<Clause> symbols, List<Clause> model)
         {
             if(symbols.Count == 0)
             {
@@ -37,7 +33,7 @@ namespace AI_Assignment_2
             {
                 Clause p = symbols.Pop();   // Effectively pops kB
 
-                return CheckAll(kb, q, symbols, model);
+                return checkAll(kb, q, symbols, model);
             }
         }
 

@@ -19,7 +19,6 @@ namespace AI_Assignment_2
 		public Clause(string value)
 		{
 			_value = value;
-
 		}
 
 		public string Value { get { return _value; } }
@@ -48,7 +47,5 @@ namespace AI_Assignment_2
 				}
 			}
 		}
-
-
 	}
 }

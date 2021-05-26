@@ -8,23 +8,13 @@ namespace AI_Assignment_2
 {
     public abstract class SearchMethods
     {
-        private KnowledgeBase _kb;
-        private LinkedList<Clause> _searched;   // chuck searched stuff
 
-        public SearchMethods(KnowledgeBase kb)
+        public SearchMethods()
         { 
-           _kb = kb;
-           _searched = new LinkedList<Clause>();
+        
         }
 
-        public abstract bool solve(Clause query);
+        public abstract bool solve(KnowledgeBase kb, Clause query);
 
-        public KnowledgeBase kb
-        {
-            get
-            {
-                return _kb;
-            }
-        }
     }
 }
