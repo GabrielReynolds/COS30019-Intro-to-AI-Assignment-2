@@ -84,10 +84,10 @@ namespace AI_Assignment_2
 					_query = q;
 				}
 			}
-
-			_kB.RemoveAt(_kB.Count - 1);
+			_kB.RemoveAt(_kB.Count-1);
 			foreach (Clause c in _kB)
 				Console.WriteLine(c.Sentence);
+			
 		}
 
 		public void Remove(int i)
@@ -105,8 +105,16 @@ namespace AI_Assignment_2
 			get
             {
 				Clause result = _kB[0];
+				
 				return result;
 			}
+		}
+		public List<Clause> list
+        { 
+			get
+            {
+				return _kB;
+            }
 		}
 
 		public Clause Query

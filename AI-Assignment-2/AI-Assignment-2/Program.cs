@@ -12,19 +12,23 @@ namespace AI_Assignment_2
         {
             string filepath = "test_HornKB.txt";
             
-       
-
-           KnowledgeBase kB = new KnowledgeBase(filepath);
-           Clause query = kB.Query;
             
-           TruthTable test = new TruthTable();
+
+            KnowledgeBase kB = new KnowledgeBase(filepath);
+            Clause query = kB.Query;
+            
            
-            if(test.solve(kB, query) == true)
+            TruthTable test = new TruthTable(kB);
+            ForwardChain fctest = new ForwardChain(kB);
+            if(test.solve(query) == true)
                 Console.WriteLine("success");
             else
                 Console.WriteLine("failure");
-
-           Console.ReadLine();
+            if (fctest.solve(query) == true)
+                Console.WriteLine("success");
+            else
+                Console.WriteLine("failure");
+            Console.ReadLine();
         }
     }
 }
