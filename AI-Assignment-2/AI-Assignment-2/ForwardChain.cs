@@ -16,34 +16,44 @@ namespace AI_Assignment_2
 
             Stack<string> symbols = new Stack<string>();    // list for easy management
             List<string> Inferred = new List<string>();
-            for (int i = 0; i < kb.Size; i++)
+            for (int i = kb.Size-1; i > 0; i--)
             {
-                if (kb.Indexer(i).Proposition == null)
+                if (kb.Indexer(i).Proposition.Count == 0)
                     symbols.Push(kb.Indexer(i).Value);
-                else
-                {
-                    foreach(string s in kb.Indexer(i).Proposition)
-                    {
-                        symbols.Push(s);
-                    }
-                   
-                }
+                
             }
             while (symbols.Count != 0)
             {
                 string p = symbols.Pop();
                 if (p == query.Value)
-                    return true;
+                {
+                    foreach(string s in Inferred)
+                        Console.WriteLine(s);
+                  return true;
+
+                }
+                  
                 if(!Inferred.Contains(p))
                 {
                     Inferred.Add(p);
                     foreach(Clause c in kb.list)
                     {
-                        if(c.Proposition.Contains(p))
+                        if(c.Proposition.Contains(p) || c.Value == p)
                         {
                             c.Count--;
                             if (c.Count == 0)
+                            { 
                                 symbols.Push(c.Value);
+                                if(c.Value == query.Value)
+                                {
+                                    Inferred.Add(c.Value);
+                                    foreach(string s in Inferred)
+                                        Console.WriteLine(s);
+                                    return true;
+                                }
+
+                            }
+                            
                         }
                     }
                 }

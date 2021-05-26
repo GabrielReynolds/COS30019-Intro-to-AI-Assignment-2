@@ -21,6 +21,7 @@ namespace AI_Assignment_2
 		public Clause(string value)
 		{
 			_value = value;
+			_propositions = new List<string>();
 
 		}
 
