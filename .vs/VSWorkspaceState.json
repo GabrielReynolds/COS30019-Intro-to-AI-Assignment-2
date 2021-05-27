@@ -4,8 +4,10 @@
     "\\AI-Assignment-2",
     "\\AI-Assignment-2\\AI-Assignment-2",
     "\\AI-Assignment-2\\AI-Assignment-2\\obj",
+    "\\AI-Assignment-2\\AI-Assignment-2\\obj\\Debug",
+    "\\AI-Assignment-2\\AI-Assignment-2\\obj\\Release",
     "\\AI-Assignment-2\\AI-Assignment-2\\Properties"
   ],
-  "SelectedNode": "\\AI-Assignment-2\\AI-Assignment-2.sln",
+  "SelectedNode": "\\AI-Assignment-2\\AI-Assignment-2\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

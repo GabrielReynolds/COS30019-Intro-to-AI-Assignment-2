@@ -8,10 +8,10 @@ namespace AI_Assignment_2
 {
     public class ForwardChain : SearchMethods
     {
-        public ForwardChain(KnowledgeBase kb) : base(kb) { }
+        public ForwardChain() { } 
 
 
-        public override bool solve(Clause query)
+        public override bool solve(KnowledgeBase kb, Clause query)
         {
 
             Stack<string> symbols = new Stack<string>();    // list for easy management
