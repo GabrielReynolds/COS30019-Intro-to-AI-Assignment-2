@@ -17,9 +17,8 @@ namespace AI_Assignment_2
             KnowledgeBase kB = new KnowledgeBase(filepath);
             Clause query = kB.Query;
             
+           TruthTable test = new TruthTable(kB);
            
-            TruthTable test = new TruthTable(kB);
-            ForwardChain fctest = new ForwardChain(kB);
             if(test.solve(query) == true)
                 Console.WriteLine("success");
             else
