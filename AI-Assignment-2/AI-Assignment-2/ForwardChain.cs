@@ -13,7 +13,7 @@ namespace AI_Assignment_2
 
         public override bool solve(Clause query)
         {
-
+            string outString;
             Stack<string> symbols = new Stack<string>();    // list for easy management
             List<string> Inferred = new List<string>();
             for (int i = kb.Size-1; i > 0; i--)
@@ -27,9 +27,12 @@ namespace AI_Assignment_2
                 string p = symbols.Pop();
                 if (p == query.Value)
                 {
-                    foreach(string s in Inferred)
-                        Console.WriteLine(s);
-                  return true;
+                    
+                    outString = string.Join(" , ", Inferred.ToArray());
+                    Console.Write("YES: ");
+                    Console.Write(outString);
+                    Console.Write("\n");
+                    return true;
 
                 }
                   
@@ -47,8 +50,10 @@ namespace AI_Assignment_2
                                 if(c.Value == query.Value)
                                 {
                                     Inferred.Add(c.Value);
-                                    foreach(string s in Inferred)
-                                        Console.WriteLine(s);
+                                    outString = string.Join(" , ", Inferred.ToArray());
+                                    Console.Write("YES: ");
+                                    Console.Write(outString);
+                                    Console.Write("\n"); ;
                                     return true;
                                 }
 

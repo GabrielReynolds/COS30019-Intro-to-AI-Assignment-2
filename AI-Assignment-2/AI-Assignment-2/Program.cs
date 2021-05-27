@@ -20,11 +20,16 @@ namespace AI_Assignment_2
            
             TruthTable test = new TruthTable(kB);
             ForwardChain fctest = new ForwardChain(kB);
+            BackwardChain bctest = new BackwardChain(kB);
             if(test.solve(query) == true)
                 Console.WriteLine("success");
             else
                 Console.WriteLine("failure");
             if (fctest.solve(query) == true)
+                Console.WriteLine("success");
+            else
+                Console.WriteLine("failure");
+            if (bctest.solve(query) == true)
                 Console.WriteLine("success");
             else
                 Console.WriteLine("failure");

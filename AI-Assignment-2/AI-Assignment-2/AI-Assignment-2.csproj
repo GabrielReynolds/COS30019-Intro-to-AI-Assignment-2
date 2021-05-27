@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackwardChain.cs" />
     <Compile Include="Clause.cs" />
     <Compile Include="ForwardChain.cs" />
     <Compile Include="KnowledgeBase.cs" />
