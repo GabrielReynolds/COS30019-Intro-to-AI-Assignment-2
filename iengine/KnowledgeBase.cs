@@ -79,7 +79,7 @@ namespace AI_Assignment_2
 
 				if (line == "ASK")
                 { 
-					string query = sR.ReadLine(); // TODO: MAYBE FIX NICER?????			
+					string query = sR.ReadLine(); 	
 					Clause q = new Clause(query);
 					_query = q;
 				}
