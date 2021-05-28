@@ -47,14 +47,7 @@ namespace AI_Assignment_2
                            foreach(string s in c.Proposition)
                                 symbols.Push(s);
 
-                            if (c.Proposition.Count == 0)
-                                if (c.Value == p)
-                                {
-                                    Inferred.Add(c.Value);
-                                    Inferred.Reverse();
-                                    _outString = string.Join(" , ", Inferred.ToArray());
-                                    return true;
-                                }
+                           
                         }
                     }
                 }
