@@ -31,6 +31,7 @@ namespace AI_Assignment_2
                 string p = symbols.Pop();
                 if (p == query.Value)
                 {
+                    Inferred.Add(query.Value);
                     _outString = string.Join(" , ", Inferred.ToArray());
                     return true;
                 }
@@ -46,6 +47,7 @@ namespace AI_Assignment_2
                             if (c.Count == 0)
                             {
                                 symbols.Push(c.Value);
+
                             }
 
                         }
